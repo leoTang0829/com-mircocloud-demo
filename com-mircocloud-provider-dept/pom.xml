@@ -3,31 +3,40 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.0.RELEASE</version>
-        <relativePath/>
+        <groupId>com.mircocloud.demo</groupId>
+        <artifactId>com-mircocloud-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <groupId>com.mircocloud.demo</groupId>
-    <artifactId>com-mircocloud-demo</artifactId>
+    <groupId>com.mircocloud.provider.dept</groupId>
+    <artifactId>com-mircocloud-provider-dept</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>com-mircocloud-demo</name>
-    <packaging>pom</packaging>
+    <name>com-mircocloud-provider-dept-8001</name>
+    <description>Demo project for Spring Boot</description>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
-    <modules>
-        <module>com-mircocloud-api</module>
-        <module>com-mircocloud-provider-dept</module>
-    </modules>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -40,22 +49,14 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Finchley.RELEASE</version>
-            <type>pom</type>
-            <scope>import</scope>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>com-mircocloud-demo</finalName>
+        <finalName>com-mircocloud-provider-dept</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
