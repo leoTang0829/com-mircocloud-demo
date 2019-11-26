@@ -21,6 +21,7 @@
     <modules>
         <module>com-mircocloud-api</module>
         <module>com-mircocloud-provider-dept</module>
+        <module>com-mircocloud-consumer</module>
     </modules>
     <dependencies>
         <dependency>
@@ -51,6 +52,11 @@
             <version>Finchley.RELEASE</version>
             <type>pom</type>
             <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
 

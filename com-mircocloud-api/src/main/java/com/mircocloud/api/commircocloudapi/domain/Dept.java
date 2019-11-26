@@ -10,6 +10,7 @@ import java.io.Serializable;
  */
 @Data
 public class Dept implements Serializable {
+    private Integer id;
     private Long deptno;
     private String dname;
     private String db_source;
@@ -17,7 +18,8 @@ public class Dept implements Serializable {
     public Dept() {
     }
 
-    public Dept(Long deptno, String dname, String db_source) {
+    public Dept(Integer id, Long deptno, String dname, String db_source) {
+        this.id = id;
         this.deptno = deptno;
         this.dname = dname;
         this.db_source = db_source;
